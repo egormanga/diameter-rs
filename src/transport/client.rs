@@ -212,7 +212,7 @@ impl DiameterClient {
 ///
 pub struct ClientHandler {
     // reader: ReadHalf<TcpStream>,
-    reader: Box<dyn AsyncRead + Send + Unpin>,
+    pub reader: Box<dyn AsyncRead + Send + Unpin>,
     msg_caches: Arc<Mutex<HashMap<u32, Sender<DiameterMessage>>>>,
 }
 
